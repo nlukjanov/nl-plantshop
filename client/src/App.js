@@ -16,6 +16,7 @@ const SigninPage = lazy(() =>
   import('./pages/signinpage/signinpage.component')
 );
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
+const ContactPage = lazy(() => import('./pages/contact/contact.component'))
 
 const App = ({ checkUserSession, currentUser }) => {
   const unsubscribeFromAuth = null;
@@ -42,6 +43,7 @@ const App = ({ checkUserSession, currentUser }) => {
             path='/signin'
             render={() => (currentUser ? <Redirect to='/' /> : <SigninPage />)}
           />
+          <Route path='/contact' component={ContactPage} />
         </Suspense>
       </Switch>
     </div>
